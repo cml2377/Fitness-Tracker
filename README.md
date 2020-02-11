@@ -1,6 +1,6 @@
 # MongoDB Nosql Homework: Workout Tracker
 
-This is a Mongo database with a Mongoose schema and handles routes with Express.
+This is a Mongo database with a Mongoose schema and handles routes with Express. Heroku link here: [Heroku](https://fit-ness.herokuapp.com/)
 
 ## User Story
 
