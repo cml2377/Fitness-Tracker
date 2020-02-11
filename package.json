@@ -1,0 +1,32 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "A Mongo database that keeps track of workouts. Uses express.js to handle routes. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cml2377/Fitness-Tracker.git"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "mongoose",
+    "workout",
+    "tracker",
+    "bootcamp",
+    "node"
+  ],
+  "author": "Crystal Ly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cml2377/Fitness-Tracker/issues"
+  },
+  "homepage": "https://github.com/cml2377/Fitness-Tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
