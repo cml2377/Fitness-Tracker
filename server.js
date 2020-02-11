@@ -78,6 +78,10 @@ app.get("/populateduser", (req, res) => {
     // TIP: Check the models out to see how the Notes refers to the User
 });
 
+// Require the routes so the app knows what to load
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
