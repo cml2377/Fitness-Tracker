@@ -20,6 +20,15 @@ The user should be able to:
 
   * Add new exercises to a new workout plan.
 
+Latest Workout Displayed
+  Date
+  Exercise type (Cardio)
+  Total workout duration : minutes
+  Exercises performed : (2, 5 times)
+  Total weight lifted: 200lbs
+  Total sets performed: 1 set
+  Total reps performed: 10
+
 ## Commit Early and Often
 
 One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
