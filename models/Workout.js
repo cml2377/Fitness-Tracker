@@ -1,44 +1,20 @@
-// Require the mongoose ODM for MongoDB.
 const mongoose = require("mongoose");
 
-// Made a new schema. A new workout schema!
 const Schema = mongoose.Schema;
-const WorkoutSchema = new Schema({
+// New Workout!
+const Exercisechema = new Schema({
     day: {
         type: Date,
         default: Date.now
     },
-    exercises: [ // 2 types of exercises: resistance and cardio
+    exercises: [
         {
-            type: {
-                type: String,
-            },
-            name: {
-                type: String,
-            },
-            "cardio-name": {
-                type: String,
-            },
-            distance: {
-                type: Number,
-            },
-            duration: {
-                type: Number,
-            },
-            weight: {
-                type: Number,
-            },
-            sets: {
-                type: Number,
-            },
-            reps: {
-                type: Number,
-            },
-            "resistance-duration": {
-                type: Number,
-            }
+            type: Schema.Types.ObjectId,
+            ref: "Exercise"
         }
     ]
 });
-const Workout = mongoose.model("Workout", WorkoutSchema);
+
+const Workout = mongoose.model("Workout", Exercisechema);
+
 module.exports = Workout;

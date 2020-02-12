@@ -16,8 +16,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-db.User.create({ name: "Fitness Tracker" }).then(function (dbUser) {
-    res.json(dbUser);
+db.Workout.create({ name: "Fitness Tracker" }).then(function (dbWorkout) {
+    res.json(dbWorkout);
 }).catch(err => {
     res.json(err);
 });
