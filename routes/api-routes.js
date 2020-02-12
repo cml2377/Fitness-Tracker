@@ -11,54 +11,54 @@ module.exports = function (app) {
     // Get/Read route for getting all workouts.
     app.get("/api/workouts", function (req, res) {
         // getting it out of Workout.js in models.
-        db.Workout.findAll({}).then(function (dbWorkout) {
-            res.json(dbWorkout);
+        db.workout.find({}).then(function (dbworkout) {
+            res.json(dbworkout);
         }).catch(err => {
             res.json(err);
         })
     })
     // Get single workout by id.
     app.get("/api/workouts/:id", function (req, res) {
-        db.Workout.findOne({
+        db.workout.findOne({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbWorkout) {
-            res.json(dbWorkout);
+        }).then(function (dbworkout) {
+            res.json(dbworkout);
         }).catch(err => {
             res.json(err);
         })
     })
     // Post/Create a new workout in the database.
     app.post("/api/workouts", function (req, res) {
-        db.Workout.create(req.body).then(function (dbWorkout) {
-            res.json(dbWorkout);
+        db.workout.create(req.body).then(function (dbworkout) {
+            res.json(dbworkout);
         }).catch(err => {
             res.json(err);
         })
     })
     // Update a workout in the database by id.
     app.put("/api/workouts", function (req, res) {
-        db.Workout.update(
+        db.workout.update(
             req.body,
             {
                 where: {
                     id: req.body.id
                 }
-            }).then(function (dbWorkout) {
-                res.json(dbWorkout);
+            }).then(function (dbworkout) {
+                res.json(dbworkout);
             }).catch(err => {
                 res.json(err);
             })
     })
     // Delete a workout in the database.
     app.delete("/api/workouts/:id", function (req, res) {
-        db.Workout.destroy({
+        db.workout.remove({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbWorkout) {
-            res.json(dbWorkout);
+        }).then(function (dbworkout) {
+            res.json(dbworkout);
         }).catch(err => {
             res.json(err);
         })

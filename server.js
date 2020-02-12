@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
 
 // This requires all of our models from the models folder.
-const db = require("./models");
+const db = require("./models"); //don't need it?
 const app = express();
 
 app.use(logger("dev"));
