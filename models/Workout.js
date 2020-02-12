@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 // Made a new schema. A new workout schema!
 const Schema = mongoose.Schema;
-const workoutSchema = new Schema({
+const WorkoutSchema = new Schema({
     day: {
         type: Date,
         default: Date.now
@@ -12,8 +12,6 @@ const workoutSchema = new Schema({
         {
             type: {
                 type: String,
-                trim: true,
-                required: "Resistance or Cardio"
             },
             name: {
                 type: String,
@@ -42,5 +40,5 @@ const workoutSchema = new Schema({
         }
     ]
 });
-const workout = mongoose.model("workout", workoutSchema);
-module.exports = workout;
+const Workout = mongoose.model("Workout", WorkoutSchema);
+module.exports = Workout;

@@ -16,6 +16,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+db.User.create({ name: "Fitness Tracker" }).then(function (dbUser) {
+    res.json(dbUser);
+}).catch(err => {
+    res.json(err);
+});
+
+
 // MongoDB_URI referenced in .env
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
 

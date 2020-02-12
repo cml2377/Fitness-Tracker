@@ -10,7 +10,7 @@ const UserSchema = new Schema({
     workouts: [
         {
             type: Schema.Types.ObjectId,
-            ref: "workouts"
+            ref: "Workouts"
         }
     ]
 });
