@@ -30,3 +30,7 @@ Latest Workout Displayed
   Total weight lifted: 200lbs
   Total sets performed: 1 set
   Total reps performed: 10
+
+### Issues
+
+Today I learned that I only needed 1 Schema-- Workout. Also, I am currently working on the stats page and Total Workout Duration-- this stat is currently undefined.
