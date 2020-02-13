@@ -63,7 +63,10 @@ module.exports = function (app) {
 
     // Get workouts over 7 days for stats
     app.get("/api/workouts/range", (req, res) => {
-        var stats = db.Workout.find({}).sort({ "day": 1 }).limit(7);
-        res.json(stats);
+        db.Workout.find({}).then(function (dbWorkout) {
+            res.json(dbWorkout);
+        }).catch(err => {
+            res.json(err);
+        });
     })
 }
