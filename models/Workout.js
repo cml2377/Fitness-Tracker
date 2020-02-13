@@ -18,7 +18,7 @@ const WorkoutSchema = new Schema({
             required: "Please name this exercise."
         },
         distance: Number,
-        duration: Number,
+        duration: { type: Number, required: "Please input your time in minutes." },
         weight: Number,
         sets: Number,
         reps: Number
