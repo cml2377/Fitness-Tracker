@@ -4,24 +4,19 @@ const mongoose = require("mongoose");
 // Made a new schema. A new Exercise schema!
 const Schema = mongoose.Schema;
 const ExerciseSchema = new Schema({
-    day: {
-        type: Date,
-        default: Date.now
+    type: {
+        type: String,
+        enum: ["Cardio", "Resistance"],
+        required: "Select Cardio and Resistance",
     },
-
-    exercises: [ // 2 types of exercises: resistance and cardio
-        {
-            type: String,
-            name: String,
-            "cardio-name": String,
-            distance: Number,
-            duration: Number,
-            weight: Number,
-            sets: Number,
-            reps: Number,
-            "resistance-duration": Number
-        }
-    ]
+    name: String,
+    distance: Number,
+    duration: Number,
+    weight: Number,
+    sets: Number,
+    reps: Number
 });
+
 const Exercise = mongoose.model("Exercise", ExerciseSchema);
+
 module.exports = Exercise;

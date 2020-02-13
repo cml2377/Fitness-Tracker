@@ -39,7 +39,7 @@ module.exports = function (app) {
     app.put("/api/workouts/:id", function (req, res) {
         var query = { _id: req.params.id };
         db.Workout.findOneAndUpdate(query, {
-            exercises: [req.body]
+            $push: { exercises: [req.body] }
         }, function (err, dbWorkout) {
             if (err) {
                 res.json(err);
@@ -59,5 +59,11 @@ module.exports = function (app) {
         }).catch(err => {
             res.json(err);
         })
+    })
+
+    // Get workouts over 7 days for stats
+    app.get("/api/workouts/range", (req, res) => {
+        var stats = db.Workout.find({}).sort({ "day": 1 }).limit(7);
+        res.json(stats);
     })
 }

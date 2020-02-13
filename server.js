@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // MongoDB_URI referenced in .env
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 // Require the routes so the app knows what to load
 require("./routes/api-routes")(app);
