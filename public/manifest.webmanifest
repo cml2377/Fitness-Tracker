@@ -1,0 +1,15 @@
+{
+    "name": "Workout App",
+    "short_name": "Workout App",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "/",
+    "display": "standalone"
+}
