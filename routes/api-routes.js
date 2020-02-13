@@ -19,30 +19,33 @@ module.exports = function (app) {
     })
     // Get single workout by id.
     app.get("/api/workouts/:id", function (req, res) {
-        db.Workout.findOne({
-            where: {
-                id: req.params.id
+        var id = req.params.id;
+        db.Workout.findById(id, function (err, dbWorkout) {
+            if (err) {
+                console.error(err)
             }
-        }).then(function (dbWorkout) {
             res.json(dbWorkout);
-        }).catch(err => {
-            res.json(err);
         })
     })
     // Post/Create a new workout in the database.
-    app.post("/api/workouts", function (req, res) {
-        db.Workout.create(req.body).then(function (dbWorkout) {
+    app.post("/api/workouts/", function (req, res) {
+        db.Workout.create({ exercise: req.body }).then(function (dbWorkout) {
             res.json(dbWorkout);
         }).catch(err => {
             res.json(err);
         })
     })
-    // Update a workout in the database by id.
-    app.put("/api/workouts", function (req, res) {
-        db.Workout.update({ body }).then(function (dbWorkout) {
-            res.json(dbWorkout);
-        }).catch(err => {
-            res.json(err);
+    // Update a workout with an exercise in the database by id.
+    app.put("/api/workouts/:id", function (req, res) {
+        var query = { _id: req.params.id };
+        db.Workout.findOneAndUpdate(query, {
+            exercises: [req.body]
+        }, function (err, dbWorkout) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(dbWorkout);
+            }
         })
     })
     // Delete a workout in the database.
