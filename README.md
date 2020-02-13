@@ -13,6 +13,7 @@ A consumer will reach their fitness goals quicker when they track their workout 
 ## Acceptance Criteria
 
 <img src="./img/Screenshot_4.png" width="100%">
+<img src="./img/Screenshot_5.png" width="100%">
 
 When the user loads the page, they are given the option to create a new workout, or to continue with their last workout.
 
@@ -33,4 +34,4 @@ Latest Workout Displayed
 
 ### Issues
 
-Today I learned that I only needed 1 Schema-- Workout. Also, I am currently working on the stats page and Total Workout Duration-- this stat is currently undefined. **EDIT** The public folder was missing the definition for totalDuration!!! Had to add it.
+Today I learned that I only needed 1 Schema-- Workout. Also, I am currently working on the stats page and Total Workout Duration-- this stat is currently undefined. **EDIT** The public folder was missing the definition for totalDuration!!! Had to add it. **EDIT** API-routes need to be in a certain order sometimes! The :id considered "range" as an id. 

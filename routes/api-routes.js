@@ -17,6 +17,13 @@ module.exports = function (app) {
             res.json(err);
         })
     })
+    app.get("/api/workouts/range", (req, res) => {
+        db.Workout.find({}).then(function (dbWorkout) {
+            res.json(dbWorkout);
+        }).catch(err => {
+            res.json(err);
+        });
+    })
     // Get single workout by id.
     app.get("/api/workouts/:id", function (req, res) {
         var id = req.params.id;
@@ -35,6 +42,7 @@ module.exports = function (app) {
             res.json(err);
         })
     })
+
     // Update a workout with an exercise in the database by id.
     app.put("/api/workouts/:id", function (req, res) {
         var query = { _id: req.params.id };
@@ -48,25 +56,5 @@ module.exports = function (app) {
             }
         })
     })
-    // Delete a workout in the database.
-    app.delete("/api/workouts/:id", function (req, res) {
-        db.Workout.remove({
-            where: {
-                id: req.params.id
-            }
-        }).then(function (dbWorkout) {
-            res.json(dbWorkout);
-        }).catch(err => {
-            res.json(err);
-        })
-    })
 
-    // Get workouts over 7 days for stats
-    app.get("/api/workouts/range", (req, res) => {
-        db.Workout.find({}).then(function (dbWorkout) {
-            res.json(dbWorkout);
-        }).catch(err => {
-            res.json(err);
-        });
-    })
 }
