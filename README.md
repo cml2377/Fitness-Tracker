@@ -1,6 +1,6 @@
 # MongoDB Nosql Homework: Workout Tracker
 
-This is a Mongo database with a Mongoose schema and handles routes with Express.
+This is a Mongo database with a Mongoose schema and handles routes with Express. [Link to Heroku application here!](https://fit-ness.herokuapp.com/)
 
 ## User Story
 
@@ -12,9 +12,11 @@ A consumer will reach their fitness goals quicker when they track their workout 
 
 ## Acceptance Criteria
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+<img src="./img/Screenshot_3.png" width="100%">
 
-The user should be able to:
+When the user loads the page, they are given the option to create a new workout, or to continue with their last workout.
+
+The user is be able to:
 
   * Add exercises to a previous workout plan.
 
